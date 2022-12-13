@@ -4,7 +4,7 @@ import { groceryRouter } from "./router";
 
 export const appRouter = router({
   example: exampleRouter,
-  actual: groceryRouter
+  groceryRouter: groceryRouter
 });
 
 // export type definition of API
