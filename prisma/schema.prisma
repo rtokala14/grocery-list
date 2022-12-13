@@ -10,8 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model GroceryList {
+  id      Int      @id @default(autoincrement())
+  title   String
+  checked Boolean? @default(false)
+}
+
 model Example {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id    Int    @id
+  title String
 }
