@@ -51,5 +51,20 @@ export const groceryRouter = router({
                     }
                 }
             })
+        }),
+    deleteOne: publicProcedure
+        .input(
+            z.object({
+                id: z.number()
+            })
+        )
+        .mutation(({ ctx, input }) => {
+            const { id } = input
+
+            return ctx.prisma.groceryList.delete({
+                where: {
+                    id: id
+                }
+            })
         })
 })
